@@ -1,10 +1,50 @@
-mkdir -p ZKL/src/frontend ZKL/src/ir ZKL/src/backend ZKL/src/utils ZKL/include ZKL/tests ZKL/examples
-cd ZKL
-touch src/main.c src/frontend/{lexer.c,lexer.h,parser.c,parser.h} \
-      src/ir/{ir_generator.c,ir_generator.h,optimizer.c,optimizer.h} \
-      src/backend/{constraint_compiler.c,constraint_compiler.h,proof_generator.c,proof_generator.h,verifier_generator.c,verifier_generator.h} \
-      src/utils/{file_io.c,file_io.h,error_handling.c,error_handling.h} \
-      include/zkl.h \
-      tests/{test_lexer.c,test_parser.c} \
-      examples/example1.zkl \
-      Makefile README.md
+ZKL/
+├── src/                      # Source code
+│   ├── frontend/             # Frontend components
+│   │   ├── lexer.c           # Lexer implementation
+│   │   ├── parser.c          # Parser implementation
+│   │   ├── lexer.h           # Lexer header
+│   │   ├── parser.h          # Parser header
+│   │   ├── ast.c             # AST implementation
+│   │   ├── ast.h             # AST header
+│   │   └── validator.c       # Code validation (semantic analysis)
+│   │
+│   ├── ir/                   # Intermediate Representation components
+│   │   ├── ir_generator.c    # IR generation
+│   │   ├── ir_generator.h    # IR generator header
+│   │   ├── optimizer.c       # Optimizations for IR
+│   │   ├── optimizer.h       # Optimizer header
+│   │   └── ir_structs.h      # IR data structures (e.g., DAG, constraints)
+│   │
+│   ├── backend/              # Backend components
+│   │   ├── constraint_compiler.c # Constraint generation
+│   │   ├── constraint_compiler.h
+│   │   ├── proof_generator.c # Interface to ZKP library
+│   │   ├── proof_generator.h
+│   │   ├── verifier_generator.c # Verifier generation
+│   │   └── verifier_generator.h
+│   │
+│   ├── main.c                # Main program entry point
+│   └── utils/                # Utility functions
+│       ├── file_io.c         # File reading/writing
+│       ├── file_io.h
+│       ├── error_handling.c  # Error handling
+│       └── error_handling.h
+│
+├── include/                  # Header files (public)
+│   ├── zkl.h                 # Main public API header
+│
+├── tests/                    # Unit tests
+│   ├── test_lexer.c
+│   ├── test_parser.c
+│   ├── test_ir.c
+│   └── test_backend.c
+│
+├── docs/                     # Documentation
+│   └── design.md             # Design document for the project
+│
+├── Makefile                  # Build instructions
+├── README.md                 # Project overview
+└── examples/                 # Example input programs
+    ├── example1.zkl
+    └── example2.zkl
