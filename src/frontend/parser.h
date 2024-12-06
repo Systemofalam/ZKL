@@ -39,4 +39,13 @@ ASTNode* parse_tokens(Token* tokens);
  */
 void free_ast(ASTNode* node);
 
+
+/**
+ * Prints the ast.
+ * 
+ * @param node The root node of the AST to print 
+ * @param indent The number of indentations.
+ */
+void print_ast(const ASTNode* node, int indent);
+
 #endif // PARSER_H

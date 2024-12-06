@@ -148,3 +148,25 @@ static ASTNode* parse_factor(Token** current) {
             token->value, token->line, token->column);
     exit(1);
 }
+
+// Helper function to print indentation
+static void print_indent(int indent) {
+    for (int i = 0; i < indent; i++) {
+        printf("  ");
+    }
+}
+
+// Print the AST (recursive function)
+void print_ast(const ASTNode* node, int indent) {
+    if (!node) return;
+
+    print_indent(indent);
+    printf("Node Type: %d, Value: %s\n", node->type, node->value ? node->value : "NULL");
+
+    // Print child nodes
+    print_ast(node->left, indent + 1);
+    print_ast(node->right, indent + 1);
+
+    // Print next statement (if any)
+    print_ast(node->next, indent);
+}
