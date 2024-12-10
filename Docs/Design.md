@@ -5,8 +5,6 @@ ZKL/
 │   │   ├── parser.c          # Parser implementation
 │   │   ├── lexer.h           # Lexer header
 │   │   ├── parser.h          # Parser header
-│   │   ├── ast.c             # AST implementation
-│   │   ├── ast.h             # AST header
 │   │   └── validator.c       # Code validation (semantic analysis)
 │   │
 │   ├── ir/                   # Intermediate Representation components
